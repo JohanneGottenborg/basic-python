@@ -9,7 +9,7 @@ x = [int(a) for a in sys.stdin.read().split()]
 # space separated format, you cannot use print(x) since that will add the
 # square brackets and the commas, but you can use
 #
-# print(" ".join(str(i) for i in x))
+print(" ".join(str(i) for i in x))
 #
 # to first translate the integers into strings, (str(i) for i in x),
 # and then merge them with spaces between them, " ".join(...).
@@ -34,6 +34,7 @@ def print_list(x):
 # exercise, if it is "times", it is the second exercise, and if it is
 # "even" it is the third. Any other option is an error.
 
+print(x)
 
 if len(sys.argv) < 2:
     print("Incorrect number of arguments.", file=sys.stderr)
@@ -42,19 +43,46 @@ if len(sys.argv) < 2:
 match sys.argv[1]:
     case "mean":
         # put your solution to the first exercise here
-        mean = "mean of x"
+        sum_of_x = 0
+        for i in x:
+            sum_of_x += x
+        mean = sum_of_x/len(x)
         print(mean)
 
     case "times":
         # Put your solution to the second exercise here
         times_three = []
+        for i in x:
+            times_three.append(i*3)
         print_list(times_three)
 
     case "even":
         # Put your solution to the third exercise here
         even = []
+        for i in x:
+            if i%2 == 0:
+                even.append(i)
         print_list(even)
 
     case _:
         print(f"Incorrect command {sys.argv[1]}.", file=sys.stderr)
         sys.exit(1)
+
+x = [1, 2, 3, 4, 5, 6]
+
+# sum_of_x = 0
+# for i in x:
+#     sum_of_x += i
+# mean = sum_of_x/len(x)
+# print(mean)
+
+# times_three = []
+# for i in x:
+#     times_three.append(i*3)
+# print(times_three)
+
+# even = []
+# for i in x:
+#     if i%2 == 0:
+#         even.append(i)
+# print(even)
